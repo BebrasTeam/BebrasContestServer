@@ -1,0 +1,31 @@
+{
+  "name": "contestInterface",
+  "version": "0.0.0",
+  "homepage": "https://github.com/France-ioi/bebras-platform",
+  "authors": [
+    "France IOI"
+  ],
+  "description": "Contest Interface of Bebras Platform",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2",
+    "almond": "~0.3",
+    "base64": "~0.3",
+    "jquery": "~1.9",
+    "jquery-ui": "~1.11",
+    "jquery-ui-touch-punch": "*",
+    "jquery-postmessage": "git@github.com:miketaylr/jquery-postmessage.git",
+    "i18next": "~1.10",
+    "jQuery-ajaxTransport-XDomainRequest": "~1.0",
+    "json3": "~3.3",
+    "pem-platform": "France-IOI/pem-platform",
+    "utf8": "~2.1"
+  }
+}

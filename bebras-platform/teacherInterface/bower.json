@@ -1,0 +1,27 @@
+{
+  "name": "teacherInterface",
+  "version": "0.0.0",
+  "homepage": "https://github.com/France-ioi/bebras-platform",
+  "authors": [
+    "France IOI"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2",
+    "almond": "~0.3",
+    "jquery": "~1.9",
+    "jquery-ui": "~1.11",
+    "pem-platform": "France-ioi/pem-platform",
+    "i18next": "~1.10.2",
+    "jqgrid": "~4.8.2",
+    "jQuery-ajaxTransport-XDomainRequest": "~1.0",
+    "json3": "~3.3"
+  }
+}
