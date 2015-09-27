@@ -110,3 +110,25 @@ use something else than jqGrid, which is buggy as hell in all recent versions
 全ての最近のバージョンの地獄のような気の狂ったjqGrid以外を使え
 
 
+
+
+まとめ
+
+//インストール
+config_local_templete.phpにconfig_local.phpをコピーしてURLとDatabaseを設定する
+
+~パッケージ関連~
+dbv/index.php内で設定
+Composer(phpパッケージ管理ツール)をinstallしcommonFramework/modelsManager/triggers.phpを実行
+プラットフォームをテストしたい場合sampleDatabase/database_content.sqlをインポート
+言語設定
+
+
+//初期設定
+
+
+
+
+
+
+
