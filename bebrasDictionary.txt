@@ -1,0 +1,15 @@
+ビーバー辞書
+
+everythin’    Alternative form of everything.
+aleternative form 選択方式
+historically 史上 歴史的に
+named 名前付きの
+connexion conection
+
+bower http://bower.io/  JavaScript,CSS,HTMLなどを依存関係を含めて管理してくれる、フロントエンド用パッケージ管理ツール。Twitter製
+
+refer to 　確かめる参照する
+initial configuration 初期構成
+validate 有効にする　確認する
+grid 網目?
+make sure 　確かめる

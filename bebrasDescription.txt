@@ -1,0 +1,134 @@
+This repository contains everythin you need to run the Bebras Task Platform, historically developped for (and run at) French Beaver Contest.
+
+このリポジトリはBebras Task Platformを走らせる必要があることを含む(?)、フランスのビーバーコンテストのために歴史的に開発している(?)
+
+
+
+
+//インストール
+Copy config_local_template.php into a file named config_local.php, and change the connexion parameters so that it connects to your database.
+
+config_local_template.phpの中にある名前付きのconfig_local.phpをコピーし、あなたのデータベースに卒族するために接続パラメータを変えろ
+
+//コマンド
+Visit dbv/index.php.
+Get composer dependencies:
+
+composer install
+Get Bower dependencies: run bower install in both contestInterface and teacherInterface.
+//コマンド終わり
+
+For translation and country-specific features, please refer to the documentation.
+翻訳と国特有の特徴のために、documentation(リンク)を参照してください
+
+For installation on AWS, see README.AWS.md.
+AWSをインストールするためにREADME.AWS.mdを見ろ
+
+//インストール終わり
+
+
+
+
+
+//初期構成
+
+Create an admin user: go to /teacherInterface/, register through the link "Register!".
+管理者ユーザー作成 :  /teacherInterface/  に行って、"Register!"を通して登録しろ。
+
+For the first user, you need to validate it manually through the database.
+最初のユーザーのために、あなたは手動でデータベースを通して確認する必要がある。
+
+A record should have been created in the "user" table, and you need to set the fields "validated" and "isAdmin" to 1.
+記録は"user"テーブルで作られるべきで、あなたは"validated" と "isAdmin" へ1をセットしろ。
+
+You can then log in on the /teacherInterface/index_en.html page.
+あなたはその時 /teacherInterface/index_en.html に記録を出すことができる。
+
+Generating contests: contests need to be "generated", which means compiling all of the questions into a single html file, a css file, a js file and a php file
+コンテンツ(中身)生成 : コンテンツは "generated" になる必要があり、それはシグナルhtmlファイル、cssファイル、jsファイルとphpファイルの中に全ての疑問をコンパイルするという意味である(?)
+
+You do that as an admin in the "Contest" tab by selecting a contest in the first grid, and clicking on "Regenerate selected contest".
+あなたは管理者として 最初のgrid(?)の "Contest" タブを選択して、"Regenerate selected contest(選んだコンテストを作り直す?)"をクリックすることを行う。
+
+Make sure php has read/write access to the contests folder, where it will create a sub-folder for each contest that you generate.
+phpがコンテストフォルダへ読み込み/書き込みのアクセス持っていること(あなたが作成するそれぞれのコンテストのそこでサブフォルダを作るだろう) を確かめろ
+
+The interface doesn't say anything if there is an error, so you have to check that the folder has been created.
+そのインターフェースはもしそこでエラーが起きても何も言わない、だからあなたは作られてしまったファイルをチェックする必要がある。
+
+
+Once contests have been generated, you can try them as a contestant : go to contestInterface/index_en.html in the root folder.
+一度コンテストが作られてしまって、あなたはコンテスタント(多分コンテストを受ける人)として彼らへトライできる : ルートフォルダの中にある "contestInterface/index_en.html" へ行く。
+
+It should look exactly the same as http://concours.castor-informatique.fr, and you can click on any contest that has been generated.
+"http://concours.castor-informatique.fr"と同様に正確に表す(?look)べきであり、そしてあなたは作った任意のコンテストをクリックできる。
+
+
+
+Note that if it were a production server, you would want to put an .htaccess file or equivalent in the questions folder, otherwise people will be able to access questions before the contest.
+もし本番サーバだったら、あなたは .htaccessファイル またはquestionフォルダに同等のものを置いてほしいだろう。そうでなければ人々はコンテストの前のquestionsにアクセスできるだろうということに注意しろ。
+
+You will need to input the corresponding login/password if you want to preview questions from the admin interface.
+もしあなたが管理者インターフェースからquestionsをみたい場合、対応するlogin/passwordを入力する必要があるだろう。
+
+
+Teachers use a reduced version of the admin interface, so you might want to create a different user, that is not an admin to see how it looks.
+先生は管理者インターフェースの低いバージョンを使う,
+あなたは異なるユーザを作りたいだろう。管理者でないユーザーをどのように見るか (???)
+
+ For that, register a new user through the interface, and set "validated" to 1 from the interface of the admin user.
+ そのためには、インターフェースを通して新しいユーザーを記録し、 管理者ユーザーのインターフェースから 1に "validated" をsetする
+
+Teachers can create groups, and get a password that students input to participate in the corresponding contest.(This is explained in detail in the "Explanations" tab)
+先生らはグループを作ることができ、学生の対応するコンテストのパスワードを得る。(これは"Explanations(説明)"タブの中の結果の中で説明される)
+
+When a contestant participates through a group, there are two extra steps compared to the public contest : she is asked for the number of students doing the contest as a team (1 or 2), then each student is prompted for her firstname, lastname and gender.
+グループを通してコンテスタントが参加するとき、それらはpublicなコンテストに比べて２う余分な手順がある：
+彼女は(1か2の)チームとしてコンテストをする学生達の番号を聞かれる。
+
+then each student is prompted for her firstname, lastname and gender.
+そのときそれぞれの学生は彼女のフルネームを求められる。
+
+Other than that, everything works the same way as public contests.
+それ以外はすべてpublicのコンテストと同じ働きをする。
+
+
+//TO DO
+
+prepare gulp files for contestInterface and teacherInterface to compile all needed dependencies into one big uglified js (see this example) and document it into the installation
+ 必要な全ての"one big uglified js"(この例を見ろ)の中のdependenciesと installationの中のドキュメントのコンパイルのために コンテストインターフェースとteacherInterface を一気に準備する
+
+tests!
+
+make task directory configurable (now it's certainly hardcoded as beaver_tasks)
+変更可能なタスクディレクトリを作る(今　間違いなくbeaver_tasksとしてハードコーディングされている)
+
+tracking/ has unmet external dependencies (should probably link to external CDNs)
+追跡/　まだ満たされていない外部依存関係を持ってる(多分外部CDNsへのリンク)
+
+use something else than jqGrid, which is buggy as hell in all recent versions
+全ての最近のバージョンの地獄のような気の狂ったjqGrid以外を使え
+
+
+
+
+まとめ
+
+//インストール
+config_local_templete.phpにconfig_local.phpをコピーしてURLとDatabaseを設定する
+
+~パッケージ関連~
+dbv/index.php内で設定
+Composer(phpパッケージ管理ツール)をinstallしcommonFramework/modelsManager/triggers.phpを実行
+プラットフォームをテストしたい場合sampleDatabase/database_content.sqlをインポート
+言語設定
+
+
+//初期設定
+
+
+
+
+
+
+
