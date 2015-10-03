@@ -1,7 +1,7 @@
 /vendor/
-/contestInterface/bower_components/
+
 /contestInterface/contests/
-/teacherInterface/bower_components/
+
 /teacherInterface/beaver_tasks/
 /logs/
 /config_local.php
