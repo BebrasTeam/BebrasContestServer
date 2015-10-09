@@ -13,9 +13,9 @@ $config->db->testMode = false;
 // MySQL
 $config->db->mysql = (object) array();
 $config->db->mysql->host = 'localhost';
-$config->db->mysql->database = 'castor';
-$config->db->mysql->password = 'castor';
-$config->db->mysql->user = 'castor';
+$config->db->mysql->database = 'BebrasDB';
+$config->db->mysql->password = 'pwedgtsr';
+$config->db->mysql->user = 'root';
 $config->db->mysql->logged = false;
 
 // Emails

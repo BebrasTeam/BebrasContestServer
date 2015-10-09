@@ -4,9 +4,9 @@
 error_reporting(E_ALL);
 
 function connect() {
-   $host = "127.0.0.1";
-   $database = "castor";
-   $password = "";
+   $host = "localhost";
+   $database = "BebrasDB";
+   $password = "root";
    $user = "root";
    try {
       $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
